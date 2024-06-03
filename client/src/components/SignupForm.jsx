@@ -8,7 +8,7 @@ const SignupForm = () => {
     const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
     const [validated] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-    [addUser, { error, data }] = useMutation(ADD_USER);
+    const [addUser, { error, data }] = useMutation(ADD_USER);
 
     const handleInputChange = async (event) => {
         const { name, value } = event.target;
