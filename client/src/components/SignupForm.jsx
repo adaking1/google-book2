@@ -15,7 +15,7 @@ const SignupForm = () => {
         setUserFormData({ ...userFormData, [name]: value });
     };
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -42,7 +42,7 @@ const SignupForm = () => {
 
     return (
         <>
-            <Form noValidate validated={validated} onSubmit={handleFromSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
                 <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} varient='danger'>
                     Something went wrong with signup!
                 </Alert>
